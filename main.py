@@ -1,15 +1,19 @@
 from fastapi import FastAPI
 import uvicorn
 
-from users.views import router as users_router
 
 app = FastAPI()
-app.include_router(users_router)
 
 
 @app.get("/", summary="Главный эндпоинт")
 def main_func():
-    return "Syasstroy"
+    return {'data': 'Syasstroy'}
+
+
+@app.get('/users', summary='Данные от пользователя')
+def func_num(a: int, b: int):
+    return a + b
+
 
 
 if __name__ == '__main__':
