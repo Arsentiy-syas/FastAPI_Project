@@ -1,7 +1,9 @@
-.env
-.vscode/
-__pycache__*
+__pycache__/
 database_main/
-.alembic.ini
+.vscode/
+alembic/__pycache__
 alembic/env.py
+alembic.ini
+auth/__pycache__
+.env
 
