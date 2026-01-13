@@ -1,6 +1,7 @@
 .env
-vscode/
-*__pycache__/
+.vscode/
+__pycache__*
 database_main/
-.alembic_ini
+.alembic.ini
+alembic/env.py
 
