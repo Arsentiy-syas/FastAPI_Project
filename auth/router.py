@@ -1,14 +1,15 @@
 from typing import Annotated
-from fastapi import APIRouter, HTTPException, Depends, Request, Response
+from fastapi import APIRouter, HTTPException, Depends, Response
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import text, insert, select
-from .schemas import UserCreate, Token
-from .config import get_password_hash, verify_password, create_access_token
+from sqlalchemy import select
+from .schemas import UserCreate
+from .config import get_password_hash, create_access_token
 from .models import UsersORM
 from database_main.database import get_db
 
 
 router_users = APIRouter(prefix='/users', tags=['users'])
+
 
 SessionDep = Annotated[AsyncSession, Depends(get_db)]
 
